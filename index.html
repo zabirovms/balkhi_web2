@@ -118,9 +118,9 @@
             <div class="flex flex-col items-center">
                 <div class="flex items-center mb-4">
                     <i class="fas fa-book-open text-3xl mr-3 text-yellow-200"></i>
-                    <h1 class="text-3xl md:text-4xl font-bold text-center">Ашъори Ҷалолуддини Балхӣ (Румӣ)</h1>
+                    <h1 class="text-3xl md:text-4xl font-bold text-center">Ганҷинаи ашъори Ҷалолуддини Балхӣ — Румӣ</h1>
                 </div>
-                <p class="text-lg text-yellow-100 text-center max-w-2xl">Маҷмӯъаи комили ашъори шоири бузургони форс-тоҷик</p>
+                <p class="text-lg text-yellow-100 text-center max-w-2xl">Маҷмӯъаи комили ашъори шоири бузурги форс-тоҷик</p>
             </div>
         </div>
     </header>
@@ -132,7 +132,7 @@
                 <li><a href="#" class="nav-link active" data-section="home"><i class="fas fa-home mr-2"></i>Асосӣ</a></li>
                 <li><a href="#" class="nav-link" data-section="masnavi"><i class="fas fa-book mr-2"></i>Маснавӣ</a></li>
                 <li><a href="#" class="nav-link" data-section="divan"><i class="fas fa-pen-fancy mr-2"></i>Девони Шамс</a></li>
-                <li><a href="#" class="nav-link" data-section="favorites"><i class="fas fa-heart mr-2"></i>Интихобӣ</a></li>
+                <li><a href="#" class="nav-link" data-section="favorites"><i class="fas fa-heart mr-2"></i>Писандида</a></li>
                 <li><a href="#" class="nav-link" data-section="about"><i class="fas fa-info-circle mr-2"></i>Дар бораи шоир</a></li>
             </ul>
         </div>
@@ -175,7 +175,7 @@
                         <select id="search-type" class="w-full p-2 border border-gray-300 rounded">
                             <option value="all">Ҳамаи матн</option>
                             <option value="title">Танҳо унвонҳо</option>
-                            <option value="first-verse">Мисраъи аввал</option>
+                            <option value="first-verse">Мисраи аввал</option>
                         </select>
                     </div>
                     <div>
@@ -195,11 +195,11 @@
                 <h2 class="text-3xl font-bold text-red-800 mb-4">Хуш омадед!</h2>
                 <p class="text-lg text-gray-700 max-w-3xl mx-auto">
                     Ин пойгоҳи маълумотӣ ҳамаи ашъори Ҷалолуддини Балхӣ (Мавлоно Румӣ)-ро дар бар мегирад. 
-                    Шумо метавонед ҳамаи китобҳо, ғазалҳо ва ашъори ин шоири бузургро дар ин ҷо бихонед ва ҷустуҷӯ кунед.
+                    Шумо метавонед ҳамаи асарҳои ин шоиру мутафаккири бузурги форс-тоҷикро дар ин ҷо мутолеа кунед.
                 </p>
             </div>
             
-            <h3 class="text-2xl font-semibold text-red-800 mb-6 border-b pb-2">Китобҳои мавҷуда</h3>
+            <h3 class="text-2xl font-semibold text-red-800 mb-6 border-b pb-2">Асарҳо</h3>
             <div id="books-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Books will be loaded here -->
                 <div class="text-center py-12">
@@ -209,16 +209,16 @@
             </div>
             
             <div class="mt-12 bg-white p-6 rounded-lg shadow-md">
-                <h3 class="text-2xl font-semibold text-red-800 mb-4">Ғазали интихобӣ</h3>
+                <h3 class="text-2xl font-semibold text-red-800 mb-4">Шеъри тасодуфӣ</h3>
                 <div id="random-poem" class="persian-font text-xl p-4 bg-gray-50 rounded">
                     <div class="text-center py-8">
                         <i class="fas fa-spinner fa-spin text-2xl text-red-700"></i>
-                        <p class="mt-2 text-gray-600">Дар ҳоли интихоби ғазал...</p>
+                        <p class="mt-2 text-gray-600">Дар ҳоли интихоби шеър...</p>
                     </div>
                 </div>
                 <div class="text-center mt-4">
                     <button id="refresh-random" class="bg-red-100 hover:bg-red-200 text-red-800 px-6 py-2 rounded-lg transition duration-300">
-                        <i class="fas fa-sync-alt mr-2"></i> Ғазали дигар
+                        <i class="fas fa-sync-alt mr-2"></i> Шеъри дигар
                     </button>
                 </div>
             </div>
@@ -244,13 +244,13 @@
         <section id="favorites" class="section-content hidden">
             <div class="bg-white p-6 rounded-lg shadow-md">
                 <h2 class="text-2xl font-semibold text-red-800 mb-6 flex items-center">
-                    <i class="fas fa-heart text-red-600 mr-3"></i> Ғазалҳои интихобӣ
+                    <i class="fas fa-heart text-red-600 mr-3"></i> Шеърҳои писандида
                 </h2>
                 <div id="favorites-list" class="persian-font">
                     <div class="text-center py-8 text-gray-500">
                         <i class="fas fa-heart-broken text-3xl mb-3"></i>
-                        <p>Ҳоло ҳеҷ ғазалеро интихоб накардаед.</p>
-                        <p class="text-sm mt-2">Барои илова кардани ғазалҳо ба интихобӣ, тугмаи <i class="fas fa-heart text-red-500"></i>-ро дар поёни ҳар ғазал пахш кунед.</p>
+                        <p>Ҳоло ҳеҷ шеърро интихоб накардаед</p>
+                        <p class="text-sm mt-2">Барои илова кардани шеърҳо ба рӯйхати писандида, тугмачаи <i class="fas fa-heart text-red-500"></i>-ро дар поёни ҳар як шеъри писанддидаатон пахш кунед.</p>
                     </div>
                 </div>
             </div>
@@ -268,10 +268,10 @@
                     </div>
                     <div class="md:w-2/3">
                         <p class="text-gray-700 mb-4 text-lg leading-relaxed">
-                            Ҷалолуддини Муҳаммади Балхӣ (1207-1273), маъруф ба Мавлоно ва Румӣ, яке аз бузургтарин шоирону орифони форс-тоҷик аст. Вай дар шаҳри Балх (ҳоло дар Афғонистон) таваллуд шудааст, вале баъдҳо ба қафомонди Рум (Анатолияи кунунӣ) кӯчид ва дар он ҷо зиндагӣ кард.
+                            Мавлоно Ҷалолуддин Муҳаммади Балхӣ маъруф ба Румӣ, Мавлоно ва Мавлавӣ — ориф ва адиби форс-тоҷик. Мавлоно Ҷалолуддини Балхӣ (Румӣ) тахминан соли 1207 дар дар шаҳри Балх ё дар Вахши Тоҷикистон ба дунё омадааст. Ном Аҳмад Ҷалолуддин тахаллусаш ба Мавлавӣ машҳур аст. Падараш аз олимони Балх буд. Дар ибтидои ҳуҷуми муғулҳо ӯ бо волидайни худ аз Вахш ба Балху Самарқанд ва Нишопур сафар кардааст. Баъдан оилаи онҳо аз Нишопур ба Ҳиҷоз мекӯчанд. Соли 1232 дар Қуния, назди Сайид Бурҳонуддин Муҳаққиқи Тирмизӣ илми тасаввуфро азхуд мекунад. Мавлоно Балхӣ соли 1273 дар Қунияи Рум вафот кардааст. Бузургтарин асари ӯ «Маснавии Мавлавӣ», ки соли 1259 ба навиштан ин асар сар кардааст ва зиёда аз 10-сол ба эҷоди ин асар машғул гаштааст.
                         </p>
                         <p class="text-gray-700 mb-4 text-lg leading-relaxed">
-                            Ашъори Румӣ ба забони форсӣ-тоҷикӣ навишта шудаанд ва дар тамоми ҷаҳон шинохта шудаанд. Машҳуртарин асарҳои ӯ "Маснавии маънавӣ" ва "Девони Шамс" мебошанд, ки дар онҳо мавзӯъҳои ирфонӣ, ишқӣ ва фалсафӣ ба таври шеърӣ ифода шудаанд.
+                            Ашъори Румӣ ба забони форсӣ-тоҷикӣ навишта шудаанд ва дар тамоми ҷаҳон шинохта шудаанд. Машҳуртарин асарҳои ӯ "Маснавии маънавӣ" ва "Девони Шамс" мебошанд, ки дар онҳо мавзӯъҳои ирфонӣ, ишқӣ ва фалсафӣ ба таври назм ифода шудаанд.
                         </p>
                     </div>
                 </div>
@@ -281,10 +281,11 @@
                     <div class="bg-gray-50 p-4 rounded-lg">
                         <h4 class="font-semibold text-lg text-red-700 mb-2">Маснавии маънавӣ</h4>
                         <p class="text-gray-600">Шеърҳои дароз бо мазмуни ирфонӣ ва ахлоқӣ, ки ба 6 ҷилд тақсим шудаанд. Ин китобро бо номи "Қуръони форсӣ" низ мешиносанд.</p>
+                        <p class="text-gray-600">"Маснавии маънавӣ"-и Мавлавӣ,<br>Ҳаст Қуръон бо забони паҳлавӣ.<br>Ман чӣ гӯям васфи он олиҷаноб?!<br>Нест Пайғамбар, вале дорад китоб!<br><span class="block text-right mt-2">— А. Ҷомӣ</span></p>
                     </div>
                     <div class="bg-gray-50 p-4 rounded-lg">
                         <h4 class="font-semibold text-lg text-red-700 mb-2">Девони Шамс</h4>
-                        <p class="text-gray-600">Маҷмӯъаи ғазалҳо ва рубоиҳо, ки ба хотири устоди Румӣ Шамси Табрезӣ эҷод шудаанд. Ин ашъор мавзӯъҳои ишқӣ ва ирфонӣ доранд.</p>
+                        <p class="text-gray-600">Маҷмӯъаи ғазалҳо ва рубоиҳо, ки ба хотири устоди Румӣ Шамси Табрезӣ эҷод шудаанд.</p>
                     </div>
                 </div>
                 
