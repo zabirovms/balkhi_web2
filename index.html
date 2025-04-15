@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="tg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ашъори Балхӣ (Румӣ)</title>
+    <style>
+        /* Persian-style right-to-left basic styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 2;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f5e9;
+            color: #333;
+            direction: rtl;
+            text-align: right;
+        }
+        header {
+            background-color: #8e2323;
+            color: #f9f5e9;
+            padding: 1.5rem;
+            text-align: center;
+            border-bottom: 5px solid #5a1515;
+        }
+        nav {
+            background-color: #5a1515;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav li {
+            margin: 0 1.5rem;
+        }
+        nav a {
+            color: #f9f5e9;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #d4b483;
+        }
+        main {
+            padding: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .book-section {
+            background-color: white;
+            border-radius: 5px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            border-right: 4px solid #8e2323;
+        }
+        .poem {
+            margin: 2rem 0;
+            padding: 1rem;
+            border-bottom: 1px dashed #d4b483;
+        }
+        .verse {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        .search-container {
+            margin: 2rem 0;
+            text-align: center;
+        }
+        #search-input {
+            padding: 0.5rem 1rem;
+            width: 70%;
+            border: 2px solid #5a1515;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        footer {
+            background-color: #5a1515;
+            color: #f9f5e9;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+        h1, h2, h3 {
+            color: #8e2323;
+        }
+        .book-title {
+            cursor: pointer;
+            padding: 0.5rem;
+            transition: background-color 0.3s;
+        }
+        .book-title:hover {
+            background-color: #f0e6d2;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ашъори Ҷалолуддини Балхӣ (Румӣ)</h1>
+        <p>Маҷмӯъаи комили ашъори шоири бузургони форс-тоҷик</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#home">Асосӣ</a></li>
+            <li><a href="#masnavi">Маснавӣ</a></li>
+            <li><a href="#divan">Девони Шамс</a></li>
+            <li><a href="#about">Дар бораи шоир</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Ҷустуҷӯи ашъор...">
+            <button onclick="searchPoems()">Ҷустуҷӯ</button>
+        </div>
+
+        <div id="content">
+            <!-- Content will be loaded from JSON here -->
+            <h2>Интихоби китобҳо</h2>
+            <div id="books-list"></div>
+            
+            <div id="poems-display" style="display: none;">
+                <button onclick="backToBooks()">← Бозгашт ба китобҳо</button>
+                <div id="current-poem"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Ҳамаи ҳуқуқҳо маҳфуз аст. © 2023 Ашъори Балхӣ</p>
+    </footer>
+
+    <script>
+        // This will hold our poem data
+        let poemData = {};
+        
+        // Load data from JSON file
+        fetch('balkhi_poems.json')
+            .then(response => response.json())
+            .then(data => {
+                poemData = data;
+                displayBooks();
+            })
+            .catch(error => {
+                console.error('Error loading JSON:', error);
+                document.getElementById('books-list').innerHTML = 
+                    '<p>Хатоги дар боргирии маълумот. Лутфан аз нав санҷед.</p>';
+            });
+
+        // Display all books
+        function displayBooks() {
+            const booksList = document.getElementById('books-list');
+            booksList.innerHTML = '';
+            
+            for (const bookId in poemData.books) {
+                const book = poemData.books[bookId];
+                
+                const bookDiv = document.createElement('div');
+                bookDiv.className = 'book-section';
+                bookDiv.innerHTML = `
+                    <h2 class="book-title" onclick="showBookPoems('${bookId}')">
+                        ${book.title}
+                    </h2>
+                    <p>${book.description}</p>
+                    <p>Шумораи ғазалҳо: ${book.poems.length}</p>
+                `;
+                
+                booksList.appendChild(bookDiv);
+            }
+        }
+
+        // Show all poems in a book
+        function showBookPoems(bookId) {
+            const book = poemData.books[bookId];
+            const poemsDisplay = document.getElementById('poems-display');
+            const currentPoemDiv = document.getElementById('current-poem');
+            
+            currentPoemDiv.innerHTML = `<h2>${book.title}</h2>`;
+            
+            book.poems.forEach(poem => {
+                const poemDiv = document.createElement('div');
+                poemDiv.className = 'poem';
+                poemDiv.innerHTML = `
+                    <h3 onclick="showSinglePoem('${bookId}', ${poem.id})">${poem.title}</h3>
+                    <div class="sample-verse">${poem.verses[0]}</div>
+                `;
+                currentPoemDiv.appendChild(poemDiv);
+            });
+            
+            document.getElementById('content').style.display = 'none';
+            poemsDisplay.style.display = 'block';
+        }
+
+        // Show a single poem
+        function showSinglePoem(bookId, poemId) {
+            const book = poemData.books[bookId];
+            const poem = book.poems.find(p => p.id === poemId);
+            const currentPoemDiv = document.getElementById('current-poem');
+            
+            currentPoemDiv.innerHTML = `
+                <h2>${book.title}</h2>
+                <h3>${poem.title}</h3>
+                <div class="poem-text">
+                    ${poem.verses.map(verse => `<div class="verse">${verse}</div>`).join('')}
+                </div>
+            `;
+        }
+
+        // Go back to books list
+        function backToBooks() {
+            document.getElementById('poems-display').style.display = 'none';
+            document.getElementById('content').style.display = 'block';
+        }
+
+        // Search poems
+        function searchPoems() {
+            const searchTerm = document.getElementById('search-input').value.toLowerCase();
+            if (!searchTerm) return;
+            
+            const results = [];
+            
+            for (const bookId in poemData.books) {
+                const book = poemData.books[bookId];
+                
+                book.poems.forEach(poem => {
+                    const matchingVerses = poem.verses.filter(verse => 
+                        verse.toLowerCase().includes(searchTerm));
+                    
+                    if (matchingVerses.length > 0 || 
+                        poem.title.toLowerCase().includes(searchTerm)) {
+                        results.push({
+                            bookId,
+                            bookTitle: book.title,
+                            poem,
+                            matchingVerses
+                        });
+                    }
+                });
+            }
+            
+            displaySearchResults(results);
+        }
+
+        // Display search results
+        function displaySearchResults(results) {
+            const currentPoemDiv = document.getElementById('current-poem');
+            const poemsDisplay = document.getElementById('poems-display');
+            
+            currentPoemDiv.innerHTML = '<h2>Натоиҷи ҷустуҷӯ</h2>';
+            
+            if (results.length === 0) {
+                currentPoemDiv.innerHTML += '<p>Ҳеҷ натиҷае ёфт нашуд.</p>';
+            } else {
+                results.forEach(result => {
+                    const resultDiv = document.createElement('div');
+                    resultDiv.className = 'poem';
+                    resultDiv.innerHTML = `
+                        <h3 onclick="showSinglePoem('${result.bookId}', ${result.poem.id})">
+                            ${result.poem.title} (аз ${result.bookTitle})
+                        </h3>
+                        ${result.matchingVerses.map(verse => 
+                            `<div class="verse">${verse}</div>`).join('')}
+                    `;
+                    currentPoemDiv.appendChild(resultDiv);
+                });
+            }
+            
+            document.getElementById('content').style.display = 'none';
+            poemsDisplay.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
