@@ -280,7 +280,6 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                     <div class="bg-gray-50 p-4 rounded-lg">
                         <h4 class="font-semibold text-lg text-red-700 mb-2">Маснавии маънавӣ</h4>
-                        <p class="text-gray-600">Шеърҳои дароз бо мазмуни ирфонӣ ва ахлоқӣ, ки ба 6 ҷилд тақсим шудаанд. Ин китобро бо номи "Қуръони форсӣ" низ мешиносанд.</p>
                         <p class="text-gray-600">"Маснавии маънавӣ"-и Мавлавӣ,<br>Ҳаст Қуръон бо забони паҳлавӣ.<br>Ман чӣ гӯям васфи он олиҷаноб?!<br>Нест Пайғамбар, вале дорад китоб!<br><span class="block text-right mt-2">— А. Ҷомӣ</span></p>
                     </div>
                     <div class="bg-gray-50 p-4 rounded-lg">
@@ -289,13 +288,13 @@
                     </div>
                 </div>
                 
-                <h3 class="text-xl font-semibold text-red-800 mb-4 border-b pb-2">Зикрҳо ва ҳикоятҳо</h3>
+                <h3 class="text-xl font-semibold text-red-800 mb-4 border-b pb-2">Панду андарзҳо</h3>
                 <div class="space-y-4">
                     <div class="p-4 bg-yellow-50 border-l-4 border-yellow-400 rounded-r-lg">
-                        <p class="font-medium text-yellow-800">"Биё, биё, ҳар чи ҳастӣ, биё, ҳатто агар кофир, буддӣ ё ҳатто батпарастӣ, биё. Мо ваъдагоҳи нӯмедӣ нест, биё."</p>
+                        <p class="font-medium text-yellow-800">Ҳеле! Навмед набошӣ ки туро ёр биронад,<br>Гарат имрӯз биронад на ки фардот бихонад?<br>Дар агар бар ту бибандад мараву сабр кун он ҷо,<br>Зи паси сабр, туро Ӯ ба сари садр нишонад</p> 
                     </div>
                     <div class="p-4 bg-blue-50 border-l-4 border-blue-400 rounded-r-lg">
-                        <p class="font-medium text-blue-800">"Шумо аз ҳама чиз мегузаред, ҳамчун об аз рӯда, ҳамчун рӯз аз осмон. Шумо ҳамчун рӯзҳо мегузаред, агар бо ҳар як рӯз як қадам ба сӯи Худо равоед, шумо ба сӯи Худо ҳаракат мекунед."</p>
+                        <p class="font-medium text-blue-800">"Ризқ ояд пеши ҳар ки сабр ҷуст,<br>Ранҷу кӯшишҳо зи бесабрии туст."</p>
                     </div>
                 </div>
             </div>
@@ -305,7 +304,7 @@
         <section id="poems-display" class="hidden">
             <div class="bg-white p-6 rounded-lg shadow-md">
                 <button id="back-btn" class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded-lg mb-4 transition duration-300 flex items-center">
-                    <i class="fas fa-arrow-right ml-2"></i> Бозгашт
+                    <i class="fas fa-arrow-left ml-2"></i> Бозгашт
                 </button>
                 
                 <div id="breadcrumbs" class="text-sm text-gray-600 mb-4 flex items-center">
@@ -320,12 +319,12 @@
                 <div id="poem-actions" class="mt-6 pt-4 border-t border-gray-200 flex justify-between">
                     <div>
                         <button id="prev-poem" class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded-lg transition duration-300 hidden">
-                            <i class="fas fa-arrow-right ml-2"></i> Қабли
+                            <i class="fas fa-arrow-left ml-2"></i> Қаблӣ
                         </button>
                     </div>
                     <div class="flex space-x-2 space-x-reverse">
                         <button id="favorite-btn" class="bg-red-100 hover:bg-red-200 text-red-800 px-4 py-2 rounded-lg transition duration-300">
-                            <i class="far fa-heart mr-2"></i> Интихоб
+                            <i class="far fa-heart mr-2"></i> Писанддидан
                         </button>
                         <button id="share-btn" class="bg-blue-100 hover:bg-blue-200 text-blue-800 px-4 py-2 rounded-lg transition duration-300">
                             <i class="fas fa-share-alt mr-2"></i> Мубодила
@@ -333,7 +332,7 @@
                     </div>
                     <div>
                         <button id="next-poem" class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded-lg transition duration-300 hidden">
-                            Баъдӣ <i class="fas fa-arrow-left mr-2"></i>
+                            Баъдӣ <i class="fas fa-arrow-right mr-2"></i>
                         </button>
                     </div>
                 </div>
@@ -345,10 +344,10 @@
             <div class="bg-white p-6 rounded-lg shadow-md">
                 <div class="flex justify-between items-center mb-6">
                     <h2 class="text-2xl font-semibold text-red-800 flex items-center">
-                        <i class="fas fa-search mr-3"></i> Натоиҷи ҷустуҷӯ
+                        <i class="fas fa-search mr-3"></i> Натиҷаи ҷустуҷӯ
                     </h2>
                     <button id="back-from-search" class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded-lg transition duration-300">
-                        <i class="fas fa-arrow-right ml-2"></i> Бозгашт
+                        <i class="fas fa-arrow-left ml-2"></i> Бозгашт
                     </button>
                 </div>
                 
@@ -389,7 +388,7 @@
             </div>
             
             <div class="border-t border-red-800 mt-6 pt-6 text-center text-yellow-100">
-                <p>Ҳамаи ҳуқуқҳо маҳфуз аст. © 2023 Ашъори Балхӣ</p>
+                <p>Ҳамаи ҳуқуқҳо маҳфуз аст. © 2025 Ашъори Балхӣ</p>
             </div>
         </div>
     </footer>
@@ -398,14 +397,14 @@
     <div id="share-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
         <div class="bg-white rounded-lg p-6 w-full max-w-md">
             <div class="flex justify-between items-center mb-4">
-                <h3 class="text-xl font-semibold text-red-800">Мубодилаи ғазал</h3>
+                <h3 class="text-xl font-semibold text-red-800">Мубодилаи шеър</h3>
                 <button id="close-share-modal" class="text-gray-500 hover:text-gray-700">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
             
             <div class="mb-4">
-                <label class="block text-gray-700 mb-2">Роҳҳои мубодила</label>
+                <label class="block text-gray-700 mb-2">Усулҳои мубодила</label>
                 <div class="flex space-x-3 space-x-reverse justify-center">
                     <button class="share-option bg-blue-500 hover:bg-blue-600 text-white p-3 rounded-full">
                         <i class="fab fa-telegram text-xl"></i>
@@ -523,7 +522,7 @@
                     elements.booksList.innerHTML = `
                         <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 rounded">
                             <p class="font-bold">Хатогӣ</p>
-                            <p>Хатоги дар боргирии маълумот. Лутфан баъдтар аз нав санҷед.</p>
+                            <p>Хатогӣ дар боргирии маълумот. Лутфан баъдтар аз нав санҷед.</p>
                             <button onclick="window.location.reload()" class="mt-2 bg-red-600 text-white px-4 py-2 rounded">
                                 <i class="fas fa-sync-alt mr-2"></i> Аз нав кӯшиш кунед
                             </button>
@@ -648,7 +647,7 @@
             if (!appState.poemData || !appState.poemData.books) {
                 elements.booksList.innerHTML = `
                     <div class="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4 rounded">
-                        <p>Ҳоло ягон китоб дастрас нест.</p>
+                        <p>Ҳоло ягон асар дастрас нест.</p>
                     </div>
                 `;
                 return;
@@ -671,7 +670,7 @@
                         <div class="flex justify-between items-center text-sm text-gray-500">
                             <span><i class="fas fa-book-open mr-1"></i> ${book.poems.length} ғазал</span>
                             <button class="text-red-700 hover:text-red-900 font-medium">
-                                Дидан <i class="fas fa-arrow-left mr-1"></i>
+                                Дидан <i class="fas fa-arrow-right mr-1"></i>
                             </button>
                         </div>
                     </div>
@@ -777,7 +776,7 @@
                     <div class="flex justify-between items-center text-sm text-gray-500">
                         <span>${globalIndex + 1} аз ${appState.currentBookPoems.length}</span>
                         <button class="text-red-600 hover:text-red-800">
-                            Хондан <i class="fas fa-arrow-left ml-1"></i>
+                            Хондан <i class="fas fa-arrow-right ml-1"></i>
                         </button>
                     </div>
                 `;
@@ -929,8 +928,8 @@
             const isFavorite = !!appState.favorites[poemKey];
             
             elements.favoriteBtn.innerHTML = isFavorite 
-                ? '<i class="fas fa-heart mr-2"></i> Аз интихобӣ тоза кардан' 
-                : '<i class="far fa-heart mr-2"></i> Интихоб';
+                ? '<i class="fas fa-heart mr-2"></i> Аз 'писандида' нест кардан' 
+                : '<i class="far fa-heart mr-2"></i> Писандида';
             
             elements.favoriteBtn.className = isFavorite 
                 ? 'bg-red-200 hover:bg-red-300 text-red-800 px-4 py-2 rounded-lg transition duration-300'
@@ -948,8 +947,8 @@
                 favoritesList.innerHTML = `
                     <div class="text-center py-8 text-gray-500">
                         <i class="fas fa-heart-broken text-3xl mb-3"></i>
-                        <p>Ҳоло ҳеҷ ғазалеро интихоб накардаед.</p>
-                        <p class="text-sm mt-2">Барои илова кардани ғазалҳо ба интихобӣ, тугмаи <i class="fas fa-heart text-red-500"></i>-ро дар поёни ҳар ғазал пахш кунед.</p>
+                        <p>Ҳоло ҳеҷ шеърро интихоб накардаед.</p>
+                        <p class="text-sm mt-2">Барои илова кардани шеърҳо ба писандидаҳо, тугмачаи <i class="fas fa-heart text-red-500"></i>-ро дар поёни ҳар як шеър пахш кунед.</p>
                     </div>
                 `;
                 return;
@@ -1015,7 +1014,7 @@
                     <p class="text-lg text-gray-600 mb-6">${book.description}</p>
                     <button onclick="showBookPoems('${bookId}')" 
                             class="bg-red-700 hover:bg-red-800 text-white px-6 py-3 rounded-lg transition duration-300">
-                        <i class="fas fa-book-open mr-2"></i> Дидани ҳамаи ғазалҳо
+                        <i class="fas fa-book-open mr-2"></i> Дидани ҳамаи шеърҳо
                     </button>
                 </div>
             `;
@@ -1054,7 +1053,7 @@
                 <div class="mt-4">
                     <button onclick="showSinglePoem('${randomPoem.bookId}', ${randomPoem.id})" 
                             class="text-red-600 hover:text-red-800 font-medium">
-                        Хондани тамоми ғазал <i class="fas fa-arrow-left ml-1"></i>
+                        Хондани ҳамаи шеър <i class="fas fa-arrow-left ml-1"></i>
                     </button>
                 </div>
             `;
@@ -1065,7 +1064,7 @@
             if (!appState.poemData || !elements.searchBook) return;
             
             const select = elements.searchBook;
-            select.innerHTML = '<option value="">Ҳамаи китобҳо</option>';
+            select.innerHTML = '<option value="">Ҳамаи асарҳо</option>';
             
             for (const bookId in appState.poemData.books) {
                 const book = appState.poemData.books[bookId];
